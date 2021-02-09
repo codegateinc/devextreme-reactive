@@ -5,6 +5,7 @@ let gestureCover: HTMLElement;
 export const toggleGestureCover = (toggle, cursor?) => {
   let style: React.CSSProperties = {
     pointerEvents: toggle ? 'all' : 'none',
+    display: toggle ? 'block' : 'none'
   };
   if (toggle && cursor) {
     style = {

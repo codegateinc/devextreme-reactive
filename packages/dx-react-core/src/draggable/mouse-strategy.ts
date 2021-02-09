@@ -54,13 +54,13 @@ export class MouseStrategy {
       toggleGestureCover(true, cursor);
     }
   }
-
+  // I moved toggleGestureCover - so it will always fire
   end(e) {
     if (this.dragging) {
       const { clientX: x, clientY: y } = e;
-      toggleGestureCover(false);
       this.delegate.onEnd({ x, y });
     }
+    toggleGestureCover(false);
     this.mouseInitialOffset = null;
     this.dragging = false;
   }
